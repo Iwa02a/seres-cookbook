@@ -108,4 +108,20 @@ if(!localStorage.getItem('seres_changwon_font_migrated_v1')){
   try{localStorage.setItem('seres_settings_v1',JSON.stringify(settings));localStorage.setItem('seres_changwon_font_migrated_v1','1')}catch{}
 }
 // JSON 파일을 배포할 경우 기본 데이터로 읽을 수 있도록 지원
-async function init(){try{const cloud=await SeresCloud.loadPublic();if(cloud.recipes.length){recipes=cloud.recipes}else{recipes=clone(window.DEFAULT_RECIPES)}if(cloud.settings.general)settings=cloud.settings.general;if(Array.isArray(cloud.settings.categories)){categoryDefs=cloud.settings.categories;try{localStorage.setItem('seres_categories_v1',JSON.stringify(categoryDefs))}catch(e){console.warn('카테고리 로컬 백업 실패:',e)}}}catch(err){console.warn('Supabase 연결 실패, 내장 기본 자료를 표시합니다:',err);recipes=clone(window.DEFAULT_RECIPES)}await loadCustomFont();applySettings();render();SeresCloud.showStatus()}for(let i=1;i<=10;i++)$('#editTier').insertAdjacentHTML('beforeend',`<option value="${i}">${i}티어</option>`);init();
+async function init(){
+ try{
+  const cloud=await SeresCloud.loadPublic();
+  if(Array.isArray(cloud.recipes)){
+   // An empty response may be a genuine empty database. Never overwrite the user's local cache on failure.
+   recipes=cloud.recipes;
+   try{localStorage.setItem('seres_recipes_v2',JSON.stringify(recipes))}catch(e){console.warn('요리 캐시 저장 실패:',e)}
+  }
+  if(cloud.settings.general){settings=cloud.settings.general;try{localStorage.setItem('seres_settings_v1',JSON.stringify(settings))}catch(e){console.warn(e)}}
+  if(Array.isArray(cloud.settings.categories)){
+   categoryDefs=cloud.settings.categories;
+   try{localStorage.setItem('seres_categories_v1',JSON.stringify(categoryDefs))}catch(e){console.warn('카테고리 로컬 백업 실패:',e)}
+  }
+  if(cloud.errors.length)console.error('Supabase 공개 데이터 조회 오류:',cloud.errors.join(' / '));
+ }catch(err){console.error('Supabase 연결 실패, 기존 브라우저 자료를 유지합니다:',err)}
+ await loadCustomFont();applySettings();render();SeresCloud.showStatus();
+}for(let i=1;i<=10;i++)$('#editTier').insertAdjacentHTML('beforeend',`<option value="${i}">${i}티어</option>`);init();

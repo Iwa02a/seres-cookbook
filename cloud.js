@@ -20,7 +20,19 @@ function loginUI(){return new Promise(resolve=>{
  f.onsubmit=async e=>{e.preventDefault();const btn=f.querySelector('[type=submit]');btn.disabled=true;try{await login(f.querySelector('[type=email]').value,f.querySelector('[type=password]').value);if(!await isAdmin()){session=null;throw Error('관리자 권한이 없는 계정입니다.')}finish(true)}catch(err){f.querySelector('[data-error]').textContent=err.message;btn.disabled=false}};
  })}
 async function requireAdmin(){if(session?.access_token){try{if(await isAdmin())return true}catch{session=null}}return loginUI()}
-async function loadPublic(){const [r,s]=await Promise.all([api('/rest/v1/recipes?select=id,data&order=id.asc&limit=1000'),api('/rest/v1/site_settings?select=key,value')]);status='Supabase 연결됨';return {recipes:r.map(x=>x.data),settings:Object.fromEntries(s.map(x=>[x.key,x.value]))}}
+async function loadPublic(){
+ const [recipeResult,settingResult]=await Promise.allSettled([
+  api('/rest/v1/recipes?select=id,data&order=id.asc&limit=1000'),
+  api('/rest/v1/site_settings?select=key,value')
+ ]);
+ const errors=[];
+ if(recipeResult.status==='rejected')errors.push('요리 불러오기 실패: '+recipeResult.reason.message);
+ if(settingResult.status==='rejected')errors.push('설정 불러오기 실패: '+settingResult.reason.message);
+ status=errors.length?'Supabase 오류 ('+errors.join(' / ')+')':'Supabase 연결됨';
+ return {recipes:recipeResult.status==='fulfilled'?recipeResult.value.map(x=>x.data):null,
+  settings:settingResult.status==='fulfilled'?Object.fromEntries(settingResult.value.map(x=>[x.key,x.value])):{},
+  errors};
+}
 async function saveRecipe(recipe){await api('/rest/v1/recipes?on_conflict=id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=minimal'},body:JSON.stringify({id:String(recipe.id),data:recipe,updated_at:new Date().toISOString()})},true)}
 async function getRecipe(id){const rows=await api('/rest/v1/recipes?select=data&id=eq.'+encodeURIComponent(String(id))+'&limit=1',{},true);return rows?.[0]?.data||null}
 async function deleteRecipe(id){await api('/rest/v1/recipes?id=eq.'+encodeURIComponent(id),{method:'DELETE'},true)}
