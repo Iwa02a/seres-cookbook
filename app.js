@@ -16,7 +16,22 @@ function renderCategoryEditor(){$('#categoryEditor').innerHTML=categoryDefs.map(
 function readCategoryEditor(){return [...document.querySelectorAll('.categoryEditRow')].map(row=>({icon:row.querySelector('.catIcon').value.trim()||'✨',name:row.querySelector('.catName').value.trim(),keywords:row.querySelector('.catKeywords').value.trim()})).filter(c=>c.name)}
 $('#addCategory').onclick=()=>{categoryDefs=readCategoryEditor();categoryDefs.push({name:'새 카테고리',icon:'✨',keywords:''});renderCategoryEditor()};
 $('#categoryEditor').onclick=e=>{const b=e.target.closest('[data-remove-category]');if(!b)return;categoryDefs=readCategoryEditor();categoryDefs.splice(Number(b.dataset.removeCategory),1);renderCategoryEditor()};
-$('#saveCategories').onclick=async()=>{const next=readCategoryEditor();if(new Set(next.map(c=>c.name)).size!==next.length){alert('카테고리 이름은 중복될 수 없어요.');return}if(next.some(c=>c.name==='전체')){alert('전체는 예약된 이름이에요.');return}categoryDefs=next;localStorage.setItem('seres_categories_v1',JSON.stringify(categoryDefs));if(!categoryNames().includes(effect))effect='전체';renderCategoryChecks(recipes.find(r=>r.id===selectedId)?.categories||[]);try{await SeresCloud.saveSetting('categories',categoryDefs);render();alert('카테고리 설정이 전체 방문자에게 저장됐어요.')}catch(err){alert('서버 저장 실패: '+err.message)}};
+$('#saveCategories').onclick=async()=>{
+ const next=readCategoryEditor();
+ if(new Set(next.map(c=>c.name)).size!==next.length){alert('카테고리 이름은 중복될 수 없어요.');return}
+ if(next.some(c=>c.name==='전체')){alert('전체는 예약된 이름이에요.');return}
+ const button=$('#saveCategories');button.disabled=true;
+ try{
+  // Save to the shared database first; never report a local-only edit as published.
+  await SeresCloud.saveSetting('categories',next);
+  categoryDefs=next;
+  try{localStorage.setItem('seres_categories_v1',JSON.stringify(next))}catch(e){console.warn('로컬 카테고리 백업 실패:',e)}
+  if(!categoryNames().includes(effect))effect='전체';
+  renderCategoryChecks(recipes.find(r=>r.id===selectedId)?.categories||[]);
+  render();alert('카테고리가 Supabase에 저장됐어요. 새로고침하거나 다른 기기에서 접속해도 유지됩니다.');
+ }catch(err){alert('카테고리를 서버에 저장하지 못했습니다. 변경 내용은 게시되지 않았어요.\n'+err.message)}
+ finally{button.disabled=false}
+};
 function category(text){const s=String(text).toLowerCase();for(const c of categoryDefs){if(c.name==='기타')continue;if((c.keywords||'').split(',').map(x=>x.trim().toLowerCase()).filter(Boolean).some(k=>s.includes(k)))return c.name}return categoryDefs.some(c=>c.name==='기타')?'기타':(categoryDefs[0]?.name||'전체')}
 function store(){try{localStorage.setItem('seres_recipes_v2',JSON.stringify(recipes));return true}catch(err){alert('브라우저 저장 공간이 부족합니다. 이미지 크기를 줄이거나 JSON을 내보내 보관해 주세요.');return false}}function saveFav(){localStorage.setItem('seres_favs_v1',JSON.stringify(favorites))}
 function applySettings(){applySiteFont();document.documentElement.dataset.cursorStyle=settings.cursorStyle||'hand';document.documentElement.style.setProperty('--green',settings.color);$('.hero').style.backgroundImage=`linear-gradient(0deg,#1e1a1370,#1e1a1340),url("${String(settings.banner).replace(/["\\]/g,'')}")`;$('.hero h1').textContent=settings.title;$('.hero p').textContent=settings.subtitle;document.title=settings.title;$('.hero').style.backgroundPosition=settings.bannerPosition||'center';$('#tierHeadingIcon').textContent=settings.tierIcon||'👑';$('#effectHeadingIcon').textContent=settings.effectHeadingIcon||'✨';$('.searchIcon').textContent=settings.searchIcon||'🔎'}
@@ -91,4 +106,4 @@ if(!localStorage.getItem('seres_changwon_font_migrated_v1')){
   try{localStorage.setItem('seres_settings_v1',JSON.stringify(settings));localStorage.setItem('seres_changwon_font_migrated_v1','1')}catch{}
 }
 // JSON 파일을 배포할 경우 기본 데이터로 읽을 수 있도록 지원
-async function init(){try{const cloud=await SeresCloud.loadPublic();if(cloud.recipes.length){recipes=cloud.recipes}else{recipes=clone(window.DEFAULT_RECIPES)}if(cloud.settings.general)settings=cloud.settings.general;if(cloud.settings.categories)categoryDefs=cloud.settings.categories;}catch(err){console.warn('Supabase 연결 실패, 내장 기본 자료를 표시합니다:',err);recipes=clone(window.DEFAULT_RECIPES)}await loadCustomFont();applySettings();render();SeresCloud.showStatus()}for(let i=1;i<=10;i++)$('#editTier').insertAdjacentHTML('beforeend',`<option value="${i}">${i}티어</option>`);init();
+async function init(){try{const cloud=await SeresCloud.loadPublic();if(cloud.recipes.length){recipes=cloud.recipes}else{recipes=clone(window.DEFAULT_RECIPES)}if(cloud.settings.general)settings=cloud.settings.general;if(Array.isArray(cloud.settings.categories)){categoryDefs=cloud.settings.categories;try{localStorage.setItem('seres_categories_v1',JSON.stringify(categoryDefs))}catch(e){console.warn('카테고리 로컬 백업 실패:',e)}}}catch(err){console.warn('Supabase 연결 실패, 내장 기본 자료를 표시합니다:',err);recipes=clone(window.DEFAULT_RECIPES)}await loadCustomFont();applySettings();render();SeresCloud.showStatus()}for(let i=1;i<=10;i++)$('#editTier').insertAdjacentHTML('beforeend',`<option value="${i}">${i}티어</option>`);init();
