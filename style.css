@@ -1,0 +1,268 @@
+:root{--green:#526c48;--dark:#303b29;--cream:#fbf7ef;--border:#e5dccb;--text:#2e3029}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,'Malgun Gothic',sans-serif;background:linear-gradient(110deg,#fffdf8,#f5f0e6);color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}.top{background:#303b29;color:#fff;position:relative;z-index:2}.topinner{max-width:1250px;height:62px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 20px;gap:15px}.brand{display:flex;align-items:center;gap:9px}.brand b{font-size:24px;letter-spacing:1px}.brand small{font-size:12px;opacity:.8}.top nav{display:flex;gap:12px;align-items:center}.top nav a,.top nav button,.admin-link{border:0;background:transparent;color:#f7f2e6;padding:12px 13px;border-radius:6px}.top nav a:hover,.top nav button:hover,.admin-link:hover{background:#ffffff19}.hero{height:350px;background-image:linear-gradient(0deg,#1e1a1370,#1e1a1340),url('assets/banner.jpg');background-size:cover;background-position:center}.heroShade{height:100%;display:grid;place-items:center;text-align:center}.heroContent{color:white;padding:15px;width:min(100%,650px);text-shadow:0 2px 6px #0008}.heroLogo{font-size:clamp(42px,6vw,67px);font-weight:1000;letter-spacing:4px;line-height:1}.heroLogo span{font-size:35px}.heroSub{font-weight:900;letter-spacing:5px;font-size:20px}.hero h1{color:#f5d79a;font-size:26px;margin:12px 0 5px}.hero p{margin:0 0 16px}.searchbar{display:flex;align-items:center;background:white;border-radius:9px;padding:5px 5px 5px 14px;box-shadow:0 3px 20px #0005;text-shadow:none;color:#333}.searchbar span{font-size:28px}.searchbar input{flex:1;min-width:0;border:0;outline:none;padding:10px}.searchbar button,.recipeForm button[type=submit],.settingsGrid button{background:var(--green);border:0;color:white;border-radius:7px;padding:11px 19px}.container{max-width:1250px;margin:0 auto;padding:20px}.filters{display:grid;grid-template-columns:1.45fr 1fr;gap:10px}.filterbox{background:#f2e9d9;border:1px solid #e5d6bf;border-radius:8px;padding:15px 16px;min-height:112px}.filterbox h3{font-size:16px;margin:0 0 12px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:#fffaf0;border:1px solid #e9dfcf;border-radius:20px;padding:8px 12px;font-size:13px}.chip.active{background:var(--green);color:white;border-color:var(--green)}.catalogHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 0 14px}.catalogHead h2{display:inline;font-size:21px}.catalogHead p{display:inline;color:#8b857a;font-size:13px;margin-left:12px}.sortActions{display:flex;gap:8px}.sortActions select,.sortActions button{background:#fff;border:1px solid var(--border);padding:10px;border-radius:8px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.foodCard{background:#fffaf1;border:1px solid #e5dccd;border-radius:11px;overflow:hidden;box-shadow:0 3px 6px #3b2e1910;cursor:pointer;transition:transform .18s,box-shadow .18s;position:relative}.foodCard:hover{transform:translateY(-4px);box-shadow:0 8px 20px #49361c24}.foodVisual{height:150px;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 80%,#fff,#f3e5cf);position:relative}.foodVisual img{width:120px;height:120px;object-fit:contain;image-rendering:auto;filter:drop-shadow(0 7px 4px #0002)}.foodVisual .emoji{font-size:76px}.tierBadge{position:absolute;top:10px;left:10px;background:#dc9634;color:white;border-radius:15px;font-size:12px;font-weight:800;padding:4px 10px}.foodBody{padding:11px 13px}.foodBody h3{text-align:center;font-size:16px;margin:0 0 12px}.effectLine{font-size:13px;color:#615c53;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:5px 0}.foodFoot{display:flex;justify-content:space-between;align-items:center;margin-top:9px;color:#5d5c54;font-size:13px}.heart{font-size:22px;background:transparent;border:0;color:#8e8b82;padding:0 3px}.heart.on{color:#db7364}.empty{padding:60px;text-align:center;color:#8c8272}footer{margin-top:32px;background:#303b29;color:#e8e3d8;display:flex;justify-content:space-between;align-items:center;padding:19px max(20px,calc((100vw - 1210px)/2));gap:12px;font-size:13px}footer small{opacity:.65}dialog{border:1px solid #c7b79d;border-radius:12px;box-shadow:0 20px 65px #0007;max-height:90vh;color:var(--text)}dialog::backdrop{background:#141b14a8}.detailDialog{width:min(92vw,580px);padding:18px;background:#fff9ed}.detailTop{display:flex;gap:18px;align-items:center}.detailTop .detailImage{width:160px;height:160px;display:grid;place-items:center;background:#f2e5cf;border-radius:12px;font-size:90px;flex-shrink:0}.detailImage img{width:95%;height:95%;object-fit:contain}.detailTop h2{margin:5px 0}.detailTop p{color:#817666;font-size:13px}.detailSection{border:1px solid #e9decd;border-radius:10px;margin-top:12px;overflow:hidden}.detailSection h3{background:#f4e9d7;margin:0;padding:10px 13px;font-size:15px}.detailSection .inside{padding:13px;line-height:1.9}.detailClose{float:right;border:0;background:transparent;font-size:24px}.detailTags{display:flex;gap:7px;flex-wrap:wrap}.detailTags span{background:#eee6d6;padding:4px 9px;border-radius:20px;font-size:12px}.adminDialog{width:min(96vw,1050px);padding:22px;background:#fffaf2}.adminHead{display:flex;justify-content:space-between;align-items:center}.adminHead h2{margin:0}.iconBtn{border:0;background:transparent;font-size:24px}.hint{font-size:12px;color:#8a7560;line-height:1.6}.adminToolbar{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.adminToolbar button,.fileButton,.recipeForm .danger{padding:9px 12px;border-radius:7px;background:#f0e7d7;border:1px solid #dacbb4;cursor:pointer}.adminLayout{display:grid;grid-template-columns:230px 1fr;gap:20px}.adminList{border:1px solid var(--border);border-radius:8px;padding:9px;max-height:520px;overflow:auto}.adminList input{width:100%;padding:10px;border:1px solid var(--border);border-radius:7px}.adminItem{width:100%;display:block;text-align:left;padding:10px;border:0;background:transparent;border-bottom:1px solid #eee5d7}.adminItem:hover,.adminItem.selected{background:#f0e5d3}.recipeForm label,.settingsGrid label{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:700}.recipeForm input,.recipeForm textarea,.recipeForm select,.settingsGrid input{width:100%;padding:9px;border:1px solid #ded3c3;border-radius:7px;background:white}.recipeForm{display:flex;flex-direction:column;gap:10px}.formRow{display:flex;gap:10px}.formRow>*{flex:1}.settings{margin-top:20px;padding:15px;background:#f4ecdf;border-radius:8px}.settings summary{cursor:pointer;font-weight:700}.settingsGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}@media(max-width:850px){.topinner nav{gap:0}.top nav a,.top nav button{font-size:12px;padding:8px}.brand small{display:none}.filters{grid-template-columns:1fr}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{height:330px}footer{flex-wrap:wrap}}@media(max-width:600px){.topinner{height:55px;padding:0 10px}.brand b{font-size:18px}.top nav a:nth-child(1),.top nav a:nth-child(3){display:none}.top nav a,.top nav button,.admin-link{padding:6px;font-size:11px}.hero{height:290px}.heroLogo{font-size:44px}.heroSub{font-size:14px}.hero h1{font-size:22px}.hero p{font-size:13px}.container{padding:12px}.filterbox{padding:12px}.chip{padding:7px 10px;font-size:12px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.foodVisual{height:120px}.foodVisual img{width:100px;height:100px}.foodVisual .emoji{font-size:60px}.foodBody{padding:9px}.foodBody h3{font-size:14px}.effectLine{font-size:11px}.catalogHead{align-items:flex-start;flex-direction:column}.catalogHead h2{font-size:18px}.detailTop .detailImage{width:115px;height:115px;font-size:65px}.adminLayout{grid-template-columns:1fr}.adminList{max-height:145px}.adminDialog{padding:12px}.settingsGrid{grid-template-columns:1fr}footer{font-size:11px}}
+
+/* Keep the footer pinned to the bottom of the browser viewport. */
+:root { --footer-height: 64px; }
+body { padding-bottom: var(--footer-height); }
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: var(--footer-height);
+  margin-top: 0;
+  z-index: 10;
+}
+@media (max-width: 600px) {
+  :root { --footer-height: 94px; }
+  footer { justify-content: center; text-align: center; }
+}
+
+/* Navigation: keep the four primary links visible on narrow screens. */
+@media(max-width:600px){.top nav a:nth-child(1),.top nav a:nth-child(3){display:inline-flex}.topinner{gap:5px}.topinner nav{min-width:0;overflow-x:auto;scrollbar-width:none}.topinner nav::-webkit-scrollbar{display:none}.top nav a,.top nav button{white-space:nowrap}}
+
+/* Layout refinements: centered logo and aligned search icon */
+.heroContent{margin-inline:auto;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.heroLogo{width:100%;text-align:center;display:block;line-height:1.05}
+.heroSub{width:100%;text-align:center}
+.heroContent .searchbar{width:100%;margin-inline:auto}
+.searchbar .searchIcon{display:flex;align-items:center;justify-content:center;flex:0 0 25px;font-size:20px;line-height:1;min-width:25px}
+.searchbar input{height:42px}
+.searchbar button{align-self:stretch}
+.settingsGrid select{width:100%;padding:9px;border:1px solid #ded3c3;border-radius:7px;background:white}
+@media(max-width:600px){.top nav a:nth-child(1){display:inline-flex}.top nav a:nth-child(2){display:inline-flex}.heroContent{padding:12px}.searchbar .searchIcon{font-size:18px}}
+
+/* 2026-10: left-aligned brand, right-aligned navigation */
+.topinner{max-width:none;width:100%;padding-inline:clamp(18px,3.5vw,64px);justify-content:flex-start;gap:16px}
+.topinner .brand{flex:0 0 auto;white-space:nowrap}
+.topinner nav{margin-left:auto;display:flex;align-items:center;gap:8px}
+.topinner .admin-link{flex:0 0 auto;margin-left:6px}
+.top nav a,.top nav button,.admin-link{transition:background .2s ease,transform .2s ease}
+.top nav a:hover,.top nav button:hover,.admin-link:hover{transform:translateY(-1px)}
+/* Soft pill-shaped sort/filter controls */
+.sortActions{display:flex;align-items:center;gap:10px;background:#f3eadb;border:1px solid #e7d9c4;padding:7px;border-radius:15px;box-shadow:0 3px 12px #49361c0b}
+.sortLabel{font-size:13px;font-weight:750;color:#756c5d;padding-left:8px;white-space:nowrap}
+.sortActions select{appearance:none;-webkit-appearance:none;min-width:148px;padding:11px 38px 11px 16px;border:1px solid #e6d9c6;border-radius:10px;background:#fffaf3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23526c48' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;color:#384735;font-weight:700;cursor:pointer;outline:none}
+.sortActions select:hover,.sortActions select:focus-visible{border-color:#94aa81;box-shadow:0 0 0 3px #819e6a22}
+.sortActions button{background:var(--green);border:1px solid var(--green);color:white;font-weight:750;border-radius:10px;padding:11px 16px;white-space:nowrap;transition:transform .15s,filter .15s}
+.sortActions button:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.sortActions button:active{transform:translateY(0)}
+@media(max-width:760px){.topinner{padding-inline:12px;gap:6px}.brand small{display:none}.topinner nav{gap:0}.top nav a,.top nav button,.admin-link{padding:9px 7px;font-size:12px}.catalogHead{align-items:flex-start;flex-wrap:wrap}.sortActions{margin-left:auto}}
+@media(max-width:420px){.sortActions{width:100%;justify-content:flex-end}.sortActions select{min-width:0;flex:1}.sortLabel{font-size:12px}.sortActions button{padding-inline:11px}}
+
+
+
+/* Rounded accessible sorting menu */
+.visuallyHidden{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%);white-space:nowrap;pointer-events:none}
+.prettySelect{position:relative;min-width:148px}
+.sortActions .sortToggle{width:100%;min-width:148px;display:flex;align-items:center;justify-content:space-between;gap:18px;background:#fffaf3;color:#384735;border:1px solid #e6d9c6;border-radius:16px;padding:11px 14px;font-weight:700;box-shadow:0 2px 5px #57452d0c}
+.sortChevron{font-size:21px;line-height:12px;color:#6c8562;transition:transform .15s}.sortToggle[aria-expanded=true] .sortChevron{transform:rotate(180deg)}
+.sortMenu{position:absolute;z-index:30;top:calc(100% + 7px);left:0;right:0;padding:7px;background:#fffaf3;border:1px solid #e7d8c0;border-radius:17px;box-shadow:0 12px 28px #43351e30}
+.sortMenu[hidden]{display:none}.sortMenu button{display:block;width:100%;text-align:left;border:0;background:transparent;color:#453c31;border-radius:11px;padding:10px 12px;font-weight:600;white-space:nowrap}.sortMenu button:hover,.sortMenu button:focus-visible{background:#eaeedc;outline:none}.sortMenu button[aria-selected=true]{background:#526c48;color:#fff}
+.foodFoot .foodDuration{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:#615c53;line-height:1.35}.timeIcon{font-size:14px;line-height:1;display:inline-flex;align-items:center;justify-content:center}
+.heart{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#f8ecdf;border:1px solid #ecd8ce;color:#b9a49d;font-size:23px;line-height:1;transition:background .15s,color .15s,transform .15s}.heart:hover{background:#ffe3e9;color:#d8758c;transform:scale(1.08)}.heart.on{background:#ffe6ed;color:#df718d;border-color:#f3cbd6}
+html[data-cursor-style="hand"],html[data-cursor-style="hand"] body{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M11%2028%205%2019c-2-3%201-5%203-3l3%203V6c0-4%205-4%205%200v8c1-3%205-3%206%200%202-2%205-1%205%202%203-1%205%201%204%204l-4%208Z%22%20fill%3D%22%23fff7e9%22%20stroke%3D%22%235c493a%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M16%2014v5m6-5v5m5-3v4%22%20stroke%3D%22%23caa992%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E") 5 3,auto}
+html[data-cursor-style="hand"] a,html[data-cursor-style="hand"] button,html[data-cursor-style="hand"] select,html[data-cursor-style="hand"] summary,html[data-cursor-style="hand"] .foodCard,html[data-cursor-style="hand"] .chip{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M11%2028%205%2019c-2-3%201-5%203-3l3%203V6c0-4%205-4%205%200v8c1-3%205-3%206%200%202-2%205-1%205%202%203-1%205%201%204%204l-4%208Z%22%20fill%3D%22%23fff7e9%22%20stroke%3D%22%235c493a%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M16%2014v5m6-5v5m5-3v4%22%20stroke%3D%22%23caa992%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E") 5 3,pointer}
+html[data-cursor-style="cookie"],html[data-cursor-style="cookie"] body{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2212%22%20fill%3D%22%23e8b879%22%20stroke%3D%22%23725039%22%20stroke-width%3D%222%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2210%22%20r%3D%222.5%22%20fill%3D%22%237a4b32%22%2F%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%2215%22%20r%3D%223%22%20fill%3D%22%237a4b32%22%2F%3E%3Ccircle%20cx%3D%2213%22%20cy%3D%2222%22%20r%3D%222%22%20fill%3D%22%237a4b32%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%227%22%20r%3D%221.4%22%20fill%3D%22%237a4b32%22%2F%3E%3C%2Fsvg%3E") 5 3,auto}
+html[data-cursor-style="cookie"] a,html[data-cursor-style="cookie"] button,html[data-cursor-style="cookie"] select,html[data-cursor-style="cookie"] summary,html[data-cursor-style="cookie"] .foodCard,html[data-cursor-style="cookie"] .chip{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2212%22%20fill%3D%22%23e8b879%22%20stroke%3D%22%23725039%22%20stroke-width%3D%222%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2210%22%20r%3D%222.5%22%20fill%3D%22%237a4b32%22%2F%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%2215%22%20r%3D%223%22%20fill%3D%22%237a4b32%22%2F%3E%3Ccircle%20cx%3D%2213%22%20cy%3D%2222%22%20r%3D%222%22%20fill%3D%22%237a4b32%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%227%22%20r%3D%221.4%22%20fill%3D%22%237a4b32%22%2F%3E%3C%2Fsvg%3E") 5 3,pointer}
+html[data-cursor-style="fork"],html[data-cursor-style="fork"] body{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20transform%3D%22rotate%28-25%2016%2016%29%22%20stroke%3D%22%23536748%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M11%203v10m5-10v10m5-10v10M11%2013q5%207%2010%200M16%2017v12%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M13%2017h6v3h-6z%22%20fill%3D%22%23f5d5a1%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 5 3,auto}
+html[data-cursor-style="fork"] a,html[data-cursor-style="fork"] button,html[data-cursor-style="fork"] select,html[data-cursor-style="fork"] summary,html[data-cursor-style="fork"] .foodCard,html[data-cursor-style="fork"] .chip{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20transform%3D%22rotate%28-25%2016%2016%29%22%20stroke%3D%22%23536748%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M11%203v10m5-10v10m5-10v10M11%2013q5%207%2010%200M16%2017v12%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M13%2017h6v3h-6z%22%20fill%3D%22%23f5d5a1%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 5 3,pointer}
+html[data-cursor-style="default"],html[data-cursor-style="default"] body{cursor:auto}html[data-cursor-style="default"] button,html[data-cursor-style="default"] a,html[data-cursor-style="default"] .foodCard{cursor:pointer}
+
+/* Navigation optical alignment and accessible focus */
+.top nav a,.top nav button,.admin-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;line-height:1.2;vertical-align:middle;border:1px solid transparent;border-radius:12px;outline-offset:3px}
+.top nav a:focus:not(:focus-visible),.top nav button:focus:not(:focus-visible),.admin-link:focus:not(:focus-visible){outline:none}
+.top nav a:focus-visible,.top nav button:focus-visible,.admin-link:focus-visible{outline:2px solid #f2d9a6}
+.top nav button{appearance:none;-webkit-appearance:none}
+.topinner nav{align-self:center}
+/* Soft, rounded vector heart; no font/emoji glyph variation */
+.heart{width:34px;height:34px;padding:0;display:inline-flex;align-items:center;justify-content:center;line-height:1;background:#fff3f4;border:1px solid #f4dce1;border-radius:50%;color:#d5a6b0;box-shadow:0 1px 3px #613b4210}
+.heart svg{display:block;width:20px;height:20px;overflow:visible;transition:transform .18s ease;pointer-events:none}
+.heart svg path{fill:transparent;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.heart.on{color:#e47b98;background:#ffe9ef;border-color:#f6d1dc}
+.heart.on svg path{fill:currentColor;stroke:currentColor}
+.heart:hover svg{transform:scale(1.12)}
+/* Sage and warm ivory favorites; centered sort chevron */
+.heart{background:#f7f2e7;border-color:#e4d9c5;color:#8a9a76;box-shadow:0 1px 3px #403b2810}
+.heart:hover{background:#e9efdf;border-color:#c6d2b6;color:#526c48}
+.heart.on{background:#e3ead8;border-color:#aebf9d;color:#526c48}
+.heart.on:hover{background:#dce6cf;color:#3e5936}
+.sortActions .sortToggle{display:grid;grid-template-columns:minmax(0,1fr) 18px;align-items:center;column-gap:14px}
+.sortChevron{display:flex;align-items:center;justify-content:center;width:18px;height:18px;font-size:0;line-height:1;transform:none;transition:transform .15s}
+.sortChevron::before{content:"";display:block;width:7px;height:7px;border-right:2px solid #6c8562;border-bottom:2px solid #6c8562;transform:translateY(-2px) rotate(45deg);border-radius:1px}
+.sortToggle[aria-expanded=true] .sortChevron{transform:rotate(180deg)}
+
+/* Consistent optical centering for interactive controls (2026-10-09) */
+:root{--control-height:36px}
+.filterbox h3{display:flex;align-items:center;gap:6px;line-height:1.4;min-height:24px}
+.filterbox h3 span{display:inline-flex;align-items:center;justify-content:center;line-height:1;min-width:19px}
+.chips{align-items:center;row-gap:8px}
+.chip{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;min-height:var(--control-height);padding:0 13px;line-height:1.25;text-align:center;white-space:nowrap}
+.sortActions{align-items:center}
+.sortLabel{display:inline-flex;align-items:center;justify-content:center;line-height:1.25}
+.sortActions .prettySelect{display:flex;align-items:center}
+.sortActions .sortToggle{min-height:44px;display:grid;grid-template-columns:minmax(0,1fr) 18px;align-items:center;justify-items:stretch;gap:12px;line-height:1.25;padding-block:0}
+.sortToggle #sortText{display:flex;align-items:center;justify-content:center;min-height:100%;text-align:center;line-height:1.25}
+.sortChevron{align-self:center;justify-self:center;position:relative;top:0}
+.sortChevron::before{transform:translateY(-2px) rotate(45deg)}
+.sortActions #resetFilters{display:inline-flex;align-items:center;justify-content:center;min-height:44px;line-height:1.25;white-space:nowrap;text-align:center}
+.catalogHead>div:first-child{display:flex;align-items:center;flex-wrap:wrap;column-gap:12px;row-gap:4px}
+.catalogHead h2{display:inline-flex;align-items:center;line-height:1.35;margin:0}
+.catalogHead p{display:inline-flex;align-items:center;line-height:1.35;margin:0}
+.topinner .brand,.topinner nav,.topinner nav a,.topinner nav button,.topinner .admin-link{align-items:center}
+.topinner .brand{line-height:1.25}
+.topinner nav a,.topinner nav button,.topinner .admin-link{line-height:1.25}
+.foodFoot{min-height:34px}
+.foodFoot>span{display:inline-flex;align-items:center;line-height:1.35}
+.effectLine{line-height:1.45}
+@media(max-width:600px){.chip{min-height:34px;padding-inline:11px}.catalogHead>div:first-child{column-gap:8px}.sortActions #resetFilters{min-height:40px}.sortActions .sortToggle{min-height:40px}}
+
+/* Cocochoitoon: site copy only; preserve SERES branding typography */
+@font-face { font-family: 'LocusSangsang'; src: url('./assets/locus_sangsang.ttf') format('truetype'); font-display: swap; }
+body, button, input, select, textarea { font-family: 'LocusSangsang', 'Malgun Gothic', sans-serif; }
+.brand b, .heroLogo, .heroSub, footer > b { font-family: system-ui, -apple-system, 'Malgun Gothic', sans-serif !important; }
+/* Keep the SERES wordmark distinct, but style its Korean subtitle with Locus Sangsang. */
+.brand small { font-family: 'LocusSangsang', 'Malgun Gothic', sans-serif !important; }
+
+/* Editable site fonts; keep SERES/COOKBOOK wordmarks unchanged */
+@font-face{font-family:'CafeDongdong';src:url('./assets/Cafe24DongdongRegular.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Cocochoitoon';src:url('./assets/Griun_Cocochoitoon-Rg.ttf') format('truetype');font-display:swap}
+body,button,input,select,textarea,.brand small{font-family:var(--site-font,'LocusSangsang'), 'Malgun Gothic',sans-serif !important}
+.brand b,.heroLogo,.heroSub,footer>b{font-family:system-ui,-apple-system,'Malgun Gothic',sans-serif !important}
+.settingsGrid small{line-height:1.5}
+
+/* Header brand: normalize font metrics and center all three elements */
+.topinner .brand{display:inline-flex;align-items:center;justify-content:flex-start;gap:9px;min-height:44px;line-height:1;white-space:nowrap}
+.brand .brand-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:28px;font-size:19px;line-height:1;flex-shrink:0}
+.brand b{display:inline-flex;align-items:center;height:30px;line-height:1;font-size:24px;margin:0;padding:0}
+.brand small{display:inline-flex;align-items:center;height:30px;line-height:1.1;font-size:12px;margin:0;padding:0;opacity:.85;white-space:nowrap}
+@media(max-width:600px){.brand b{font-size:18px}.brand .brand-icon{width:18px;font-size:17px}.brand small{display:none}}
+
+/* Header logo: all three items share one vertical center line. */
+.topinner{align-items:center}
+.topinner .brand{display:inline-flex;flex-direction:row;align-items:center;justify-content:flex-start;align-self:center;gap:9px;height:100%;min-height:0;line-height:normal;white-space:nowrap}
+.topinner .brand .brand-icon,.topinner .brand b,.topinner .brand small{display:inline-flex;align-items:center;justify-content:center;align-self:center;position:static;top:auto;bottom:auto;transform:none;margin:0;padding:0;vertical-align:middle;flex-shrink:0}
+.topinner .brand .brand-icon{height:30px;width:22px;line-height:1}
+.topinner .brand b{height:30px;line-height:1;font-size:24px}
+.topinner .brand small{height:30px;line-height:1;font-size:12px;opacity:.85}
+@media(max-width:600px){.topinner .brand b{font-size:18px}.topinner .brand .brand-icon{width:18px}.topinner .brand small{display:none}}
+
+/* Optical correction: SERES uppercase glyphs sit low relative to Korean label. */
+.topinner .brand b{position:relative;top:-3px;transform:none}
+@media(max-width:600px){.topinner .brand b{top:-2px}}
+
+/* Tier palette: a distinct, gentle color for each cooking tier. */
+.tier-1 {--tier-color:#608b62;--tier-ink:#fff;--tier-soft:#e5efe2;}
+.tier-2 {--tier-color:#5c83aa;--tier-ink:#fff;--tier-soft:#e5eef8;}
+.tier-3 {--tier-color:#b88a35;--tier-ink:#fff;--tier-soft:#f8edce;}
+.tier-4 {--tier-color:#c47b43;--tier-ink:#fff;--tier-soft:#f8e7d9;}
+.tier-5 {--tier-color:#9e715b;--tier-ink:#fff;--tier-soft:#f2e5df;}
+.tier-6 {--tier-color:#458e80;--tier-ink:#fff;--tier-soft:#dff0ec;}
+.tier-7 {--tier-color:#9671b2;--tier-ink:#fff;--tier-soft:#eee5f5;}
+.tier-8 {--tier-color:#ba6386;--tier-ink:#fff;--tier-soft:#f7e5ed;}
+.tier-9 {--tier-color:#6765ad;--tier-ink:#fff;--tier-soft:#e9e8f8;}
+.tier-10{--tier-color:#477a94;--tier-ink:#fff;--tier-soft:#e2edf4;}
+.tierBadge[class*="tier-"]{background:var(--tier-color);color:var(--tier-ink);}
+/* The credit should follow the same selectable Korean font as the rest of the site. */
+footer small{font-family:var(--site-font,'LocusSangsang'),'Malgun Gothic',sans-serif !important;opacity:1;font-size:inherit;font-weight:400;line-height:1.4;}
+
+/* Tier selector: keep All + tiers 1–10 on a single line. */
+#tierChips{display:flex;flex-wrap:nowrap;align-items:center;gap:4px;overflow-x:auto;overflow-y:hidden;max-width:100%;scrollbar-width:thin;padding-bottom:2px}
+#tierChips .chip{flex:0 0 auto;min-height:34px;padding:0 9px;font-size:12px;white-space:nowrap}
+@media(max-width:600px){#tierChips{gap:5px}#tierChips .chip{padding:0 10px}}
+
+/* Wide tier panel: restore the original comfortable pill size. */
+@media (min-width: 851px) {
+  .filters { grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); }
+  #tierChips { gap: 7px; overflow: visible; flex-wrap: nowrap; }
+  #tierChips .chip { min-height: 36px; padding: 8px 12px; font-size: 13px; }
+}
+@media (min-width: 851px) and (max-width: 1120px) {
+  #tierChips { gap: 5px; }
+  #tierChips .chip { padding: 7px 9px; }
+}
+@media (max-width: 850px) {
+  .filters { grid-template-columns: 1fr; }
+  #tierChips { overflow-x: auto; flex-wrap: nowrap; }
+  #tierChips .chip { min-height: 36px; padding: 8px 12px; font-size: 13px; }
+}
+
+/* Balanced filter panels: original pill size, tiers in two intentional rows. */
+.filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items:stretch; }
+#tierChips { display:grid; grid-template-columns:repeat(6,max-content); justify-content:start; align-content:start; gap:8px 7px; overflow:visible; padding-bottom:0; }
+#tierChips .chip { min-height:36px; padding:8px 12px; font-size:13px; white-space:nowrap; }
+@media(max-width:1050px) {
+  .filters { grid-template-columns:1fr; }
+  #tierChips { grid-template-columns:repeat(6,max-content); overflow-x:auto; }
+}
+@media(max-width:600px) {
+  #tierChips { grid-template-columns:repeat(6,max-content); gap:7px; }
+  #tierChips .chip { min-height:34px; padding:7px 10px; font-size:12px; }
+}
+
+/* Balanced tier selector: equal-width chips in a tidy 6 + 5 grid. */
+.filters { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+#tierChips {
+  display: grid;
+  grid-template-columns: repeat(6,minmax(0,1fr));
+  gap: 8px;
+  overflow: visible;
+  width: 100%;
+  padding: 0;
+}
+#tierChips .chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+  min-height: 36px;
+  padding: 7px 2px;
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+/* Five buttons on the second row fill the same width as the first six. */
+#tierChips .chip:nth-child(n+7) { grid-column: span 1; }
+#tierChips .chip:nth-child(7) { grid-column: 1 / span 1; }
+#tierChips .chip:nth-child(8) { grid-column: 2 / span 1; }
+#tierChips .chip:nth-child(9) { grid-column: 3 / span 1; }
+#tierChips .chip:nth-child(10) { grid-column: 4 / span 1; }
+#tierChips .chip:nth-child(11) { grid-column: 5 / span 1; }
+@media (max-width: 850px) {
+  .filters { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  #tierChips { gap: 5px; }
+  #tierChips .chip { font-size: 11px; padding: 7px 1px; }
+}
+
+/* Fixed-size recipe picture and graceful image failure */
+.detailTop .detailImage{width:160px;height:160px;min-width:160px;min-height:160px;max-width:160px;max-height:160px;overflow:hidden;position:relative;font-size:0;line-height:1;display:flex;align-items:center;justify-content:center}.detailTop .detailImage img{display:block;max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;font-size:0}.detailTop .detailImage.imageUnavailable::after{content:"🍲";font-size:64px;line-height:1}.detailTop>div:last-child{min-width:0;overflow-wrap:anywhere}.detailTop h2{overflow-wrap:anywhere}@media(max-width:600px){.detailTop .detailImage{width:115px;height:115px;min-width:115px;min-height:115px;max-width:115px;max-height:115px}.detailTop .detailImage.imageUnavailable::after{font-size:48px}}
+
+/* Editable category controls and safe image preview */
+.categoryChecks{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.categoryCheck{display:inline-flex!important;align-items:center;gap:5px;border:1px solid #e5d7c1;background:#fffaf2;padding:7px 12px;border-radius:24px;font-weight:400!important}.categoryCheck input{width:auto!important}.categoryEditor{display:grid;gap:9px;margin:12px 0}.categoryEditRow{display:grid;grid-template-columns:70px minmax(110px,1fr) minmax(150px,2fr) 64px;gap:8px}.categoryEditRow input{min-width:0;width:100%;box-sizing:border-box}.categoryEditRow button,.imageControls button{border:1px solid #e0d2bd;background:#f2e8d8;border-radius:10px;padding:8px}.imageControls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}.imageControls img{width:80px;height:80px;object-fit:contain;border-radius:12px;background:#f1e7d6}.imageControls img[hidden]{display:none}.imageControls small{color:#67715c}@media(max-width:650px){.categoryEditRow{grid-template-columns:50px 1fr 60px}.catKeywords{grid-column:1/-1;grid-row:2}}
+
+/* Bundled Changwon Dangam Round: all UI except SERES / COOKBOOK logo */
+@font-face{font-family:'ChangwonDangamRound';src:url('./assets/ChangwonDangamRound.ttf') format('truetype');font-display:swap}
+:root{--site-font:'ChangwonDangamRound'}
+body,button,input,select,textarea,.brand small,footer small{font-family:var(--site-font),'Malgun Gothic',sans-serif!important}
+.brand b,.heroLogo,.heroSub,footer>b{font-family:system-ui,-apple-system,'Malgun Gothic',sans-serif!important}
+
+/* Minecraft food pixel art: preserve crisp nearest-neighbor pixels. */
+.foodVisual img,
+.detailImage img,
+.detailTop .detailImage img,
+.imageControls img {
+  image-rendering: pixelated !important;
+  image-rendering: crisp-edges;
+}
+
+.foodVisual img, .detailImage img, .detailTop .detailImage img, .imageControls img { image-rendering: pixelated !important; }
+
+/* Food image clarity: smaller, integer-friendly rendering without modifying original PNGs. */
+.foodVisual img { width:96px !important; height:96px !important; object-fit:contain; image-rendering:pixelated !important; }
+.detailImage img, .detailTop .detailImage img { width:128px !important; height:128px !important; max-width:100% !important; max-height:100% !important; object-fit:contain; image-rendering:pixelated !important; }
+
+/* High-quality resampled small sprites: avoid nearest-neighbor magnification. */
+.foodVisual img, .detailImage img, .detailTop .detailImage img, .imageControls img { image-rendering: auto !important; }
